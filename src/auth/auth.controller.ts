@@ -7,6 +7,11 @@ export class AuthController {
 
   @Post('register')
   registerUser(@Headers('authorization') token: string) {
-    this.authService.register(token);
+    return this.authService.register(token);
+  }
+
+  @Post('signin')
+  signinUser(@Headers('authorization') token: string) {
+    return this.authService.signin(token);
   }
 }
